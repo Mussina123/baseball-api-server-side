@@ -1,9 +1,10 @@
-const { json } = require('express');
+
 const express = require('express');
 const app = express(); 
 const PORT = 8000
-const cors= cors();
+const cors = require('cors')
 
+app.use(cors())
 const teams = {
     'yankees': {
         'W-L' : '34-21',
@@ -43,3 +44,4 @@ app.get('/api/:team', (req, res) => {
 app.listen(process.env.PORT || PORT, () => {
     console.log(`The server is running on PORT ${PORT} `)
 })
+
